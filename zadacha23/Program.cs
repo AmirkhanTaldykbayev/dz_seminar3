@@ -12,5 +12,5 @@ Console.WriteLine($"Таблица кубов числа {N} является: "
 
 for (int i = 1; i <= N; i++)
 {
-    Console.Write(Math.Pow(i, 3) + "\t");
+    Console.Write($" {i} -> {Math.Pow(i, 3)} \t");
 }
