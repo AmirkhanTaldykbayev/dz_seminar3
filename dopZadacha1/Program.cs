@@ -7,7 +7,7 @@
 */
 
 Console.WriteLine("Введите сумму вклада: ");
-double vklad = Convert.ToInt32(Console.ReadLine());
+var vklad = Convert.ToDouble(Console.ReadLine());
 double sum = 0;
 
 if(vklad > 0)
@@ -29,5 +29,5 @@ else
 {
     Console.WriteLine("Сумма вашего вклада не может быть меньше 1");
 }
-Console.WriteLine($"Общая сумма Ваших накоплений от вклада в {vklad} тенге составит: {sum} тенге");
+Console.WriteLine($"Общая сумма Ваших накоплений от вклада в {vklad} тенге составит: {sum:f2} тенге");
 Console.WriteLine("Тенге, не Тэнге :)");
