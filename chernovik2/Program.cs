@@ -1,30 +1,30 @@
-﻿
-int [] array = new int [10];
-Random rand = new Random();
+﻿// (Дополнительное, не обязательно)
+// Назовём число «интересным», если его произведение цифр делится на их сумму. Напишите программу, которая заполняет 
+// массив на 10 «интересных» случайных целых чисел от 10 до 1000. (каждый эл-т массива – сгенерирован случайно)
 
-int numLen = array.Length;
-int temp = rand.Next(100,1000);
+// [591, 532, 189, 523, 333, 546, 527, 275, 456, 264]
+// 591: (5*9*1)/(5+9+1)=45/15=3
 
-for(int i = 0; i < numLen; i++)
+int[] array = new int[10];
+Random random = new Random();
+int rnd = Convert.ToInt32(random.Next(100,1000));
+int i = 0;
+int length = array.Length;
+
+Console.WriteLine("Десятью случайно сгенерированными и интересными числами являются: ");
+while (i < length)
 {
-      if ((temp / 100) + ((temp / 10) % 10) + (temp % 10) % 3 == 0)
-      {
-         array[i] = temp;
-      }
+    if (((rnd / 100) + ((rnd / 10) % 10) + (rnd % 10)) % 3 == 0)
+    {
+      array[i] = rnd;
+      rnd = Convert.ToInt32(random.Next(100,1000));
+      Console.Write($"{array[i]} \t");
+      i++;
+    }
+    else
+    {
+      rnd = Convert.ToInt32(random.Next(100,1000));
+    }
 }
 
-Console.WriteLine(temp);
-// Console.WriteLine(array);
 
-// Console.WriteLine(temp);
-// Console.WriteLine(temp / 100);
-// Console.WriteLine((temp / 10) % 10);
-// Console.WriteLine(temp % 10);
-
-// string[] test = new string[3];
-// Random rand = new Random();
-// for(int i =0;i<test.Length;i++)
-//    test[i] = Convert.ToString(rand.Next(-100,100));//Заполняем случайными числами диапозоном от -100 до 100
-
-// string result = string.Join(",", test);
-// Console.WriteLine(result);
